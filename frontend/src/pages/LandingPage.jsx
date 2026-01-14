@@ -7,7 +7,7 @@ import { motion, useMotionValue, useMotionTemplate } from 'framer-motion';
 const LandingPage = ({ onSystemInitialize }) => {
     const navigate = useNavigate();
     return (
-        <div className="w-full text-white font-sans selection:bg-cyan-500/30">
+        <div className="w-full bg-transparent text-white font-sans selection:bg-cyan-500/30">
             {/* Hero Spacer - Strictly Left Aligned */}
             <div className="min-h-screen w-full flex pointer-events-none relative z-10">
 

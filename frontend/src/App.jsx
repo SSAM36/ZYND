@@ -122,11 +122,11 @@ const MainApp = () => {
   const isLoginPage = location.pathname === '/login';
 
   return (
-    <div className="relative w-full h-screen bg-crisis-deep selection:bg-crisis-red/30 selection:text-white overflow-hidden">
+    <div className="relative w-full h-screen bg-crisis-deep selection:bg-crisis-red/30 selection:text-white overflow-hidden" style={{ backgroundColor: '#020617' }}>
 
       {/* Global Galaxy Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
-        <Galaxy density={0.5} />
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-100">
+        <Galaxy density={1.5} />
       </div>
 
       {/* 2D UI Layer - Navbar only shows if NOT on login page */}
@@ -175,15 +175,7 @@ const MainApp = () => {
 
       {/* 3D Scene Layer (Persistent Background) */}
       <div className="absolute inset-0 z-0 pointer-events-auto">
-        <Canvas camera={{ position: [0, 0, 10], fov: 35 }}>
-          {/* Removed solid black background to let Galaxy show through, or use Galaxy as a lower layer */}
-          {/* Actually, if we want Galaxy + Earth, clean black might be best, but user said 'with the earth'. 
-               Let's add <Galaxy /> in a separate div BEHIND the canvas for better compositing, or keep canvas transparent.
-               For valid compositing: Galaxy Div (z=0) -> Canvas (z=1, transparent) -> stars
-               Let's try putting separate Galaxy div behind the Canvas div.
-           */}
-          <color attach="background" args={['#000000']} />
-
+        <Canvas camera={{ position: [0, 0, 10], fov: 35 }} gl={{ alpha: true }}>
           {/* Cinematic Lighting */}
           <ambientLight intensity={1.5} color="#8080ff" />
           <spotLight position={[50, 50, 50]} angle={0.2} penumbra={1} intensity={50} color="#ffffff" />
@@ -206,6 +198,8 @@ const MainApp = () => {
             enablePan={false}
             enableRotate={true}
             rotateSpeed={0.5}
+            autoRotate={true}
+            autoRotateSpeed={0.8}
             target={[0, 0, 0]}
           />
         </Canvas>

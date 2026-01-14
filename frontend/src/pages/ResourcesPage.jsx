@@ -15,7 +15,7 @@ const ResourcesPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-[#050505] text-white pt-24 pb-12 px-6 md:px-12">
+        <div className="min-h-screen bg-transparent text-white pt-24 pb-12 px-6 md:px-12">
 
             <div className="max-w-7xl mx-auto mb-10">
                 <h1 className="text-4xl font-display font-bold mb-2">Resource Coordination</h1>
@@ -26,7 +26,7 @@ const ResourcesPage = () => {
 
                 {/* 1. Map View */}
                 <div className="lg:col-span-2 space-y-6">
-                    <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl h-[500px] relative overflow-hidden group">
+                    <div className="bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl h-[500px] relative overflow-hidden group">
                         {/* Fake Map BG */}
                         <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/-122.42,37.78,12/1000x600?access_token=pk.mock')] bg-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700"></div>
 
@@ -176,7 +176,7 @@ const ResourcesPage = () => {
                                 <div className="text-xs text-gray-500 font-mono mb-1">{log.time}</div>
                                 <div className="text-sm text-gray-200">{log.event}</div>
                                 <div className={`text-[10px] uppercase font-bold mt-1 ${log.status === 'Completed' ? 'text-green-500' :
-                                        log.status === 'In Transit' ? 'text-blue-500' : 'text-gray-500'
+                                    log.status === 'In Transit' ? 'text-blue-500' : 'text-gray-500'
                                     }`}>
                                     {log.status}
                                 </div>

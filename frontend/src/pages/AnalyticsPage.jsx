@@ -34,7 +34,7 @@ const accuracyData = [
 
 const AnalyticsPage = () => {
     return (
-        <div className="min-h-screen bg-[#050505] text-white pt-24 pb-12 px-6 md:px-12 overflow-x-hidden">
+        <div className="min-h-screen bg-transparent text-white pt-24 pb-12 px-6 md:px-12 overflow-x-hidden">
 
             <div className="max-w-7xl mx-auto mb-10 flex justify-between items-end">
                 <div>
@@ -49,7 +49,7 @@ const AnalyticsPage = () => {
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
 
                 {/* 1. Flood Trends (Line Chart) - INCIDENTS OVER TIME */}
-                <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6">
+                <div className="bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
                     <h3 className="font-bold text-lg mb-6 flex items-center gap-2">
                         <TrendingUp className="text-cyan-500" size={20} /> Flood Incidents (Line Chart)
                     </h3>

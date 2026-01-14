@@ -36,7 +36,7 @@ const Galaxy = ({
                     y: Math.random() * canvas.height,
                     vx: (Math.random() - 0.5) * 0.5,
                     vy: (Math.random() - 0.5) * 0.5,
-                    size: Math.random() * 2 + 0.5,
+                    size: Math.random() * 2 + 0.5, // Original aesthetic size
                     hue: Math.random() * 60 + hueShift, // Blue/Purple range
                     alpha: Math.random() * 0.5 + 0.1
                 });

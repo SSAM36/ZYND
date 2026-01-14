@@ -18,7 +18,7 @@ const PredictionPage = () => {
     const [timeline, setTimeline] = useState(0); // 0 = Now, 1 = +6h, etc.
 
     return (
-        <div className="min-h-screen bg-[#050505] text-white pt-24 pb-12 px-4 md:px-8 overflow-x-hidden">
+        <div className="min-h-screen bg-transparent text-white pt-24 pb-12 px-4 md:px-8 overflow-x-hidden">
 
             {/* Header */}
             <div className="max-w-7xl mx-auto mb-8">
@@ -47,7 +47,7 @@ const PredictionPage = () => {
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
 
                 {/* Main Map Visualization (Mock) */}
-                <div className="lg:col-span-2 bg-[#0a0a0a] border border-white/10 rounded-2xl p-1 relative overflow-hidden h-[400px] md:h-[500px] group">
+                <div className="lg:col-span-2 bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl p-1 relative overflow-hidden h-[400px] md:h-[500px] group">
                     <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/0,0,2/800x600?access_token=pk.mock')] bg-cover opacity-50"></div>
                     {/* Custom CSS Grid for "Map" feel if image fails */}
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
