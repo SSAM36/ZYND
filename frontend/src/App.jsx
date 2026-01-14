@@ -11,10 +11,13 @@ import { CrisisMarkers } from './components/CrisisMarkers';
 import CrisisDashboard from './components/CrisisDashboard';
 import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
+import PredictionPage from './pages/PredictionPage';
+import PublicAlertsPage from './pages/PublicAlertsPage';
 import ResourcesPage from './pages/ResourcesPage';
 import AnalyticsPage from './pages/AnalyticsPage';
 import Login from './components/Login';
 import IncidentReport from './components/IncidentReport';
+import EarlyWarningPanel from './components/EarlyWarningPanel';
 
 // Context
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -122,6 +125,7 @@ const MainApp = () => {
 
       {/* 2D UI Layer - Navbar only shows if NOT on login page */}
       {!isLoginPage && <Navbar user={user} signOut={signOut} isSystemOnline={isSystemOnline} />}
+      {isSystemOnline && <EarlyWarningPanel />}
 
       {/* Content Routes - Scrollable Container for Pages */}
       <div className={`absolute inset-0 ${!isLoginPage ? 'pt-[80px]' : ''} z-20 overflow-y-auto custom-scrollbar pointer-events-none`}>
@@ -130,12 +134,18 @@ const MainApp = () => {
             {/* Public Routes */}
             <Route path="/" element={<Navigate to="/landing" replace />} />
             <Route path="/landing" element={<LandingPage onSystemInitialize={() => setIsSystemOnline(true)} />} />
+            <Route path="/public-alerts" element={<PublicAlertsPage />} />
             <Route path="/login" element={user ? <Navigate to="/intelligence" /> : <Login />} />
 
             {/* Protected Routes */}
             <Route path="/intelligence" element={
               <ProtectedRoute>
                 <CrisisDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/prediction" element={
+              <ProtectedRoute>
+                <PredictionPage />
               </ProtectedRoute>
             } />
             <Route path="/report" element={
