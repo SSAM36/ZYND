@@ -3,8 +3,8 @@ import { useAuth } from '../context/AuthContext';
 import { Shield, Zap, Lock, Globe, Activity, ArrowRight } from 'lucide-react';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('samarthbhirud480@gmail.com');
+    const [password, setPassword] = useState('sam123');
     const [isLogin, setIsLogin] = useState(true);
     const { login, signUp } = useAuth();
     const [error, setError] = useState(null);
