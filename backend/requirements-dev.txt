@@ -1,0 +1,26 @@
+# ===========================================
+# ZYND BACKEND - DEVELOPMENT REQUIREMENTS
+# ===========================================
+# Install these locally for development:
+# pip install -r requirements.txt -r requirements-dev.txt
+
+# Testing
+pytest>=7.0.0,<8.0.0
+pytest-asyncio==0.23.4
+
+# Code Formatting
+black==24.1.1
+
+# Linting (optional)
+# flake8==7.0.0
+# mypy==1.8.0
+
+# Advanced ML (optional - large packages)
+prophet==1.1.5
+
+# ZYND AI Agent (if you have access to P3AI Network)
+# zyndai-agent==0.1.0
+
+# Background Tasks (if needed)
+# celery==5.3.6
+# redis==5.0.1

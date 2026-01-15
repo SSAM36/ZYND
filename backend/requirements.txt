@@ -1,3 +1,9 @@
+# ===========================================
+# ZYND BACKEND - PRODUCTION REQUIREMENTS
+# ===========================================
+# This file is optimized for Railway deployment
+# Dev dependencies are in requirements-dev.txt
+
 # Core Framework
 fastapi==0.109.0
 uvicorn[standard]==0.27.0
@@ -13,25 +19,19 @@ postgrest==0.13.2
 google-generativeai==0.3.2
 langchain-google-genai==0.0.5
 langchain==0.1.5
-prophet==1.1.5
+
+# ML Libraries
 scikit-learn==1.4.0
 pandas==2.2.0
 numpy==1.26.3
 
-# ZYND AI Agent (Optional - uncomment if you have access)
-# zyndai-agent==0.1.0
-
-# Weather & Geo APIs (removed httpx to fix conflict)
+# Weather & Geo APIs
 requests==2.31.0
 geopy==2.4.1
 
 # WebSockets & Real-time
 python-socketio==5.11.0
 websockets==12.0
-
-# Background Tasks (Optional - uncomment if needed)
-# celery==5.3.6
-# redis==5.0.1
 
 # Auth & Security
 pyjwt==2.8.0
@@ -42,8 +42,3 @@ passlib[bcrypt]==1.7.4
 python-dotenv==1.0.0
 python-dateutil==2.8.2
 pytz==2024.1
-
-# Development
-pytest==8.0.0
-pytest-asyncio==0.23.4
-black==24.1.1
